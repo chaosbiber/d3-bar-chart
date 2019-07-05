@@ -1,4 +1,4 @@
-# d3-bar-chart
+# d3-bar²chart
 Simple bar chart d3.js example with error bars, including example data of t1d DIY looper data.
 
 ## demos
