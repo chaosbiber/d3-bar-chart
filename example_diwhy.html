@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+    <h1>Data visualization from the OPEN DIWHY study</h1>
+    <p>source: <a href="https://plan.core-apps.com/tristar_ada19/abstract/dd53aca444d584741fb843aa5dfaa98c">https://plan.core-apps.com/tristar_ada19/abstract/dd53aca444d584741fb843aa5dfaa98c</a></p>
+    <figure>
+        <h2>Self-reported A1c before and after starting to loop</h2>
+        <svg class="a1cdata"></svg>
+        <figcaption>
+            n = 1058 (for whole survey)<br/>
+            A1c improved from 7.07 % ± 1.07 % to 6.24 % ± 0.68 %
+        </figcaption>
+    </figure>
+    <figure>
+        <h2>Self-reported Time-in-range before and after starting to loop</h2>
+        <svg class="tirdata"></svg>
+        <figcaption>
+            n = 1058 (for whole survey)<br/>
+            Time in Range improved from 63.21 % ±16.27 to 83.07 % ±10.11
+        </figcaption>
+    </figure>
+</body>
+<script src="bar2chart.js"></script>
+<script>
+    
+    const data1 = [
+    {
+        name: 'before looping',
+        value: 7.07,
+        error: 1.07,
+        color: '#ED6B37'
+    },
+    {
+        name: 'while looping',
+        value: 6.24,
+        error: 0.68,
+        color: '#009FB7'
+    }];
+
+    const data2 = [
+    {
+        name: 'before looping',
+        value: 63.21,
+        error: 16.27,
+        color: '#ED6B37'
+    },
+    {
+        name: 'while looping',
+        value: 83.07,
+        error: 10.11,
+        color: '#009FB7'
+    }];
+
+    bar2chart(data1, "a1cdata", "A1c (%)", 0);
+    bar2chart(data2, "tirdata", "Time-in-range (%)", 0, 100);
+
+</script>
+</html>

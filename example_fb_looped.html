@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+    <h1>Data visualization from a question on Facebook</h1>
+    <p>source: <a href="https://www.facebook.com/groups/TheLoopedGroup/permalink/2297417880474865">https://www.facebook.com/groups/TheLoopedGroup/permalink/2297417880474865</a> (closed group)</p>
+    <p>method: analyzing 200+ answers from facebook post, ignoring values that are identified as predictions or rough estimates as well as worst/best case values. The average was used if multiple values or ranges were given.</p>
+    <figure>
+        <h2>Self-reported A1c before and after starting to loop</h2>
+        <svg class="a1cdata"></svg>
+        <figcaption>
+            n = 166<br/>
+            A1c improved from 7.10 % ± 1.28 % to 6.05 % ± 0.72 %
+        </figcaption>
+    </figure>
+</body>
+<script src="bar2chart.js"></script>
+<script>
+    
+    const data1 = [
+    {
+        name: 'before looping',
+        value: 7.10,
+        error: 1.28,
+        color: '#ED6B37'
+    },
+    {
+        name: 'while looping',
+        value: 6.05,
+        error: 0.72,
+        color: '#009FB7'
+    }];
+
+    bar2chart(data1, "a1cdata", "A1c (%)", 0);
+
+</script>
+</html>
